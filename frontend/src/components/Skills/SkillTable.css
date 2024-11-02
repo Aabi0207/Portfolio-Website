@@ -1,0 +1,59 @@
+/* General styling for the Skills Table component */
+.skills-table-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: -100px; /* Adjust this value to overlap the "About" and "Projects" sections */
+    z-index: 2;
+  }
+  
+  .skills-table {
+    display: flex;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Adjust width as needed */
+  }
+  
+  .skills-card {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skills-card img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .skills-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .skills-card-desc {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+  
+  .skills-card-tools {
+    font-size: 0.85em;
+    color: #0000ee; /* Dev tools color */
+    text-align: left;
+    margin-top: 10px;
+  }
+  
+  /* Responsive styling for mobile */
+  @media (max-width: 768px) {
+    .skills-table {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  

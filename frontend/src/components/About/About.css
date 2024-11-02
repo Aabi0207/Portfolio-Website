@@ -1,0 +1,59 @@
+/* src/components/about.css */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #F2E9E4; /* Background color */
+    color: #22223B;
+    font-family: 'Arial, sans-serif';
+  }
+  
+  .about-greeting {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #4A4E69; /* Dark muted purple for greeting */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .about-stack {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #9A8C98; /* Muted lavender-gray for the stack description */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .about-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #C9ADA7; /* Soft muted rose border */
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  .about-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #4A4E69;
+  }
+  
+  .about-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #463e3e;
+    text-align: center;
+    max-width: 600px; /* Optional max width for better readability */
+    margin: 10px 0px;
+  }
+  
