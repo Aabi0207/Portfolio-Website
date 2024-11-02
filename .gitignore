@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3-journal
+
+# Virtual Environment
+env/
+venv/
+ENV/
+*.env
+
+# Django
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# Django migrations
+**/migrations/
+
+# macOS
+.DS_Store
+
+# Node / React
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs (PyCharm, WebStorm, etc.)
+.idea/
