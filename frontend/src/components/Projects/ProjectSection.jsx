@@ -1,59 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import "./ProjectSection.css"
+import './ProjectSection.css';
 
 const ProjectsSection = () => {
-  const [topProjects, setTopProjects] = useState({});
-  const [allProjects, setAllProjects] = useState({});
-  const [showAll, setShowAll] = useState(false);
+  const [topProjects, setTopProjects] = useState({
+    AI: [],
+    Fullstack: [],
+    DataScience: [],
+  });
 
   useEffect(() => {
-    // Fetch top projects for each domain
     axios.get('/api/top-projects/')
-      .then(response => setTopProjects(response.data))
-      .catch(error => console.error(error));
-
-    // Fetch all projects (can be filtered by domain later)
-    axios.get('/api/all-projects/')
-      .then(response => setAllProjects(response.data))
+      .then(response => {
+        setTopProjects({
+          AI: response.data.AI,
+          Fullstack: response.data.Fullstack,
+          DataScience: response.data["Data Science"],
+        });
+      })
       .catch(error => console.error(error));
   }, []);
-
-  const handleShowMore = (domain) => {
-    setShowAll(domain);
-  };
 
   return (
     <div className="projects-section">
       <h2>My Projects</h2>
       <div className="projects-container">
-        {Object.keys(topProjects).map(domain => (
+        {Object.entries(topProjects).map(([domain, projects]) => (
           <div key={domain} className="projects-column">
             <h3>{domain}</h3>
             <div className="project-cards">
-              {topProjects[domain].map(project => (
+              {projects.map(project => (
                 <div key={project.id} className="project-card">
-                  <img src={project.image} alt={project.title} />
-                  <h4>{project.title}</h4>
-                  <p>{project.description}</p>
-                  <a href={project.project_url}>See More</a>
+                  <div
+                    className="project-image"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  >
+                    <div className="project-overlay">
+                      <h4>{project.title}</h4>
+                      <a href={project.project_url} className="visit-button">Visit</a>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
-            <button onClick={() => handleShowMore(domain)}>See More</button>
-
-            {showAll === domain && (
-              <div className="all-projects">
-                {allProjects[domain]?.map(project => (
-                  <div key={project.id} className="project-card">
-                    <img src={project.image} alt={project.title} />
-                    <h4>{project.title}</h4>
-                    <p>{project.description}</p>
-                    <a href={project.project_url}>See More</a>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         ))}
       </div>

@@ -1,60 +1,87 @@
 .projects-section {
-    padding: 2rem;
-    background-color: #f2e9e4;
-  }
-  
+  padding: 20px;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+/* Column alignment on larger screens */
+.projects-column {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.project-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-image {
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background-size: cover;
+  background-position: center;
+  transition: background-color 0.3s ease;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay h4 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.visit-button {
+  color: #fff;
+  background-color: #007BFF;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.visit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Row alignment on smaller screens */
+@media (max-width: 768px) {
   .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-  
-  .projects-column {
-    width: 30%;
-  }
-  
-  .project-cards {
-    display: flex;
     flex-direction: column;
-    gap: 1rem;
   }
-  
-  .project-card {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .projects-column {
+    flex: 1 1 100%;
   }
-  
-  .project-card img {
-    max-width: 100%;
-    border-radius: 8px;
-  }
-  
-  .project-card h4 {
-    margin: 0.5rem 0;
-  }
-  
-  .project-card p {
-    font-size: 0.9rem;
-  }
-  
-  button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .all-projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
+}
