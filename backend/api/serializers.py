@@ -1,13 +1,14 @@
 from rest_framework import serializers
 from .models import Domain, Project
 
-class DomainSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Domain
-        fields = '__all__'
-
-
-class ProjectSerializers(serializers.ModelSerializer):
+class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = '__all__'
+        fields = ['id', 'title', 'description', 'project_url', 'image']
+
+class DomainSerializer(serializers.ModelSerializer):
+    projects = ProjectSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Domain
+        fields = ['id', 'name', 'projects']
