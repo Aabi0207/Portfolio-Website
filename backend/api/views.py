@@ -12,7 +12,8 @@ class TopProjectsView(APIView):
         
         for domain in domains:
             # Fetch top 3 projects per domain
-            top_projects[domain.name] = Project.objects.filter(domain=domain)[:3]
+            if domain.name != "Other":
+                top_projects[domain.name] = Project.objects.filter(domain=domain)[:3]
         
         response_data = {}
         for domain_name, projects in top_projects.items():
@@ -21,11 +22,16 @@ class TopProjectsView(APIView):
         return Response(response_data)
 
 class AllProjectsView(APIView):
-    def get(self, request, domain_name=None):
-        if domain_name:
-            domain = Domain.objects.get(name=domain_name)
-            projects = Project.objects.filter(domain=domain)
-        else:
-            projects = Project.objects.all()
-
-        return Response(ProjectSerializer(projects, many=True).data)
+    def get(self, request):
+        domains = Domain.objects.all()
+        all_projects = {}
+        
+        for domain in domains:
+            # Fetch all projects per domain
+            all_projects[domain.name] = Project.objects.filter(domain=domain)
+        
+        response_data = {}
+        for domain_name, projects in all_projects.items():
+            response_data[domain_name] = ProjectSerializer(projects, many=True).data
+        
+        return Response(response_data)

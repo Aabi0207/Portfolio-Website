@@ -7,6 +7,7 @@
     background-color: #F2E9E4; /* Background color */
     color: #22223B;
     font-family: 'Arial, sans-serif';
+    padding-bottom: 250px;
   }
   
   .about-greeting {
@@ -56,4 +57,3 @@
     max-width: 600px; /* Optional max width for better readability */
     margin: 10px 0px;
   }
-  

@@ -2,9 +2,9 @@
 import React from "react";
 import "./SkillTable.css";
 
-const SkillsTable = () => {
+const SkillsTable = ({id}) => {
   return (
-    <section className="skills-table">
+    <section className="skills-table" id={id}>
       <div className="skills-column">
         <img src="Icons/fullstack.webp" alt="Fullstack" className="icon" />
         <h3 className="skills-title">Fullstack</h3>
@@ -18,8 +18,10 @@ const SkillsTable = () => {
           <li>JavaScript</li>
           <li>React.js</li>
           <li>Node.js</li>
-          <li>Express.js</li>
-          <li>MongoDB</li>
+          <li>Django</li>
+          <li>Flask</li>
+          <li>Postman</li>
+          <li>SQL</li>
           <li>Next.js</li>
           <li>Bootstrap</li>
           <li>Tailwind</li>
@@ -35,15 +37,16 @@ const SkillsTable = () => {
         <p className="dev-tools-title">Dev tools:</p>
         <ul className="dev-tools-list">
           <li>Jupyter Notebook</li>
-          <li>TensorFlow</li>
           <li>PyTorch</li>
-          <li>Keras</li>
+          <li>Kaggle</li>
+          <li>Google Colab</li>
+          <li>Hugging Face</li>
+          <li>LangChain</li>
           <li>scikit-learn</li>
           <li>NumPy</li>
           <li>Pandas</li>
           <li>Matplotlib</li>
           <li>SciPy</li>
-          <li>XGBoost</li>
         </ul>
       </div>
 
@@ -58,13 +61,9 @@ const SkillsTable = () => {
           <li>Pandas</li>
           <li>NumPy</li>
           <li>Matplotlib</li>
-          <li>SciPy</li>
           <li>Seaborn</li>
           <li>Plotly</li>
           <li>SQL</li>
-          <li>Power BI</li>
-          <li>Tableau</li>
-          <li>Excel</li>
         </ul>
       </div>
     </section>

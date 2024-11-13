@@ -4,9 +4,9 @@
   display: flex;
   justify-content: space-around;
   width: 80vw;
-  padding: 20px;
   background-color: white;
-  position: relative; /* To allow overlapping between sections */
+  border-radius: 8px;
+  margin-right: 10vw;
 }
 
 .skills-column {
@@ -15,9 +15,8 @@
   text-align: center;
   background-color: #fff;
   padding: 20px;
-  border: 1px solid #e0e0e0; /* Thin border around each column */
+  border: 1px solid #b3b2b2; /* Thin border around each column */
   border-radius: 8px;
-  margin: 0 10px;
 }
 
 .icon {

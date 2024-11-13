@@ -2,9 +2,9 @@
 import React from 'react';
 import './About.css';
 
-const About = () => {
+const About = ({id}) => {
   return (
-    <section className="about-section">
+    <section className="about-section" id={id}>
       <div className="about-greeting">Hii 👋, My name is Abhishek Biradar</div>
       <div className="about-stack">
       I am an AI Engineer and a Full Stack Developer
