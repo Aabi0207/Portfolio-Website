@@ -16,6 +16,10 @@
     right: 0px;
 }
 
+#project-section {
+  margin-top: 470px;
+}
+
 @media (max-width: 768px) {
     #skill-table {
       bottom: -1400px;

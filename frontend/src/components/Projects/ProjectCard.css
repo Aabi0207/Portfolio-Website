@@ -20,7 +20,7 @@
     bottom: 0;
     background-size: cover;
     background-position: center;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
   }
   
   .hover-overlay {
@@ -60,4 +60,4 @@
     cursor: pointer;
     font-weight: bold;
   }
-  
+

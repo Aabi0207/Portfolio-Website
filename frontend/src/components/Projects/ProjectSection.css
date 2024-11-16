@@ -1,5 +1,7 @@
 .projects-section {
-  padding: 20px;
+  padding-bottom: 20px;
+  width: 70vw;
+  margin-left: 14vw;
 }
 
 .projects-container {
@@ -7,6 +9,15 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-around;
+}
+
+.heading-1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.heading-2 {
+  padding-bottom: 20px;
 }
 
 /* Column alignment on larger screens */
@@ -29,6 +40,7 @@
   width: 100%;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .project-image {
@@ -45,10 +57,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -60,15 +72,16 @@
 
 .project-overlay h4 {
   color: #fff;
-  margin-bottom: 8px;
+  margin-top: 40px;
 }
 
 .visit-button {
   color: #fff;
   background-color: #007BFF;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 5px 20px;
+  border-radius: 30px;
   text-decoration: none;
+  margin-bottom: 40px;
 }
 
 .visit-button:hover {

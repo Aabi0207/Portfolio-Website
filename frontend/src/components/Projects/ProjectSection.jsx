@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ProjectSection.css';
 
-const ProjectsSection = () => {
+const ProjectsSection = ({id}) => {
   const [topProjects, setTopProjects] = useState({
     AI: [],
     Fullstack: [],
@@ -22,12 +22,12 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <div className="projects-section">
-      <h2>My Projects</h2>
+    <div className="projects-section" id={id}>
+      <h2 className='heading-1'>My Projects</h2>
       <div className="projects-container">
         {Object.entries(topProjects).map(([domain, projects]) => (
           <div key={domain} className="projects-column">
-            <h3>{domain}</h3>
+            <h3 className='heading-2'>{domain}</h3>
             <div className="project-cards">
               {projects.map(project => (
                 <div key={project.id} className="project-card">

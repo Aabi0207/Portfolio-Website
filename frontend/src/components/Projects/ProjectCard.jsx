@@ -6,10 +6,10 @@ const ProjectCard = ({ image, title, projectUrl }) => {
   return (
     <div className="project-card">
       <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-        <div className="card-image" style={{ backgroundImage: `url(${image})` }}></div>
+        <div className="card-image" style={{ backgroundImage: `url(backend${image})` }}></div>
         <div className="hover-overlay">
-          <h4>{title}</h4>
-          <button>Visit</button>
+          <h4 className='heading-4'>{title}</h4>
+          <button className='visit-but'>Visit</button>
         </div>
       </a>
     </div>
