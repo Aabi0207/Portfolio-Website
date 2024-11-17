@@ -1,7 +1,8 @@
 .projects-section {
   padding-bottom: 20px;
-  width: 70vw;
-  margin-left: 14vw;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .projects-container {
@@ -9,6 +10,8 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-around;
+  width: 70vw;
+  
 }
 
 .heading-1 {
@@ -90,11 +93,27 @@
 
 /* Row alignment on smaller screens */
 @media (max-width: 768px) {
+  .projects-section {
+    width: 100%; /* Adjust width to fit smaller screens */
+    margin-left: auto; /* Center section horizontally */
+    margin-right: auto;
+  }
+
   .projects-container {
-    flex-direction: column;
+    flex-direction: row; 
+    gap: 20px; 
   }
 
   .projects-column {
-    flex: 1 1 100%;
+    flex: 1 1 100%; 
+    max-width: 100%;
+  }
+
+  .heading-1, .heading-2 {
+    text-align: center; 
+  }
+
+  .project-card {
+    width: 100%; 
   }
 }

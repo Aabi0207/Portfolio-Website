@@ -20,8 +20,45 @@
   margin-top: 470px;
 }
 
+#all-projects {
+  margin-top: 470px;
+}
+
+/* Center the button below the project section */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.toggle-button {
+  background-color: #007bff; /* Adjust to a vibrant theme color */
+  color: white;
+  border: none;
+  border-radius: 30px; /* Capsule design */
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+
 @media (max-width: 768px) {
     #skill-table {
       bottom: -1400px;
+    }
+
+    #project-section{
+      margin-top: 90em;
+    }
+
+    #all-projects {
+      margin-top: 90em;
     }
   }

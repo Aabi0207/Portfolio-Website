@@ -1,0 +1,63 @@
+.all-projects {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.all-projects h2 {
+  font-size: 2rem;
+  margin-bottom: 30px; /* Add spacing below heading */
+}
+
+.projects-container {
+  width: 70vw; /* Constrain width */
+  margin: 0 auto; /* Center the container */
+}
+
+.project-domain {
+  margin-bottom: 30px; /* Space between domains */
+}
+
+.project-domain h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column; /* Arrange capsules vertically */
+  gap: 15px; /* Add space between capsules */
+}
+
+.project-capsule {
+  display: flex;
+  justify-content: space-between; /* Align title and arrow */
+  align-items: center;
+  background-color: #f8f9fa; /* Light background */
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Ensure capsules fill the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-capsule:hover {
+  background-color: #007bff; /* Highlight on hover */
+  color: white; /* Change text color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+  text-align: left;
+  flex: 1; /* Take up remaining space */
+}
+
+.arrow {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  color: inherit; /* Match text color */
+}
