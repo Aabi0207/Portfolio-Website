@@ -32,21 +32,47 @@
 }
 
 .toggle-button {
-  background-color: #007bff; /* Adjust to a vibrant theme color */
-  color: white;
-  border: none;
-  border-radius: 30px; /* Capsule design */
+  background-color: #ffffff; /* Adjust to a vibrant theme color */
+  color: #333;
+  border: 1px solid #333;;
+  border-radius: 50px; /* Capsule design */
   padding: 5px 10px;
-  font-size: 16px;
+  font-size: small;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 14px;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .toggle-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s ease;
 }
+
+/* Fade Transitions */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(10px); /* Start slightly below */
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0); /* Final position */
+  transition: opacity 500ms ease-in, transform 500ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px); /* Move slightly up */
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+.butt {
+  list-style: none;
+  text-decoration: none;
+}
+
 
 
 @media (max-width: 768px) {

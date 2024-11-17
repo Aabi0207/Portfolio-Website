@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AllProjects.css";
 
-const AllProjects = ({id}) => {
+const AllProjects = ({ id }) => {
   const [projects, setProjects] = useState(null);
 
   useEffect(() => {
@@ -20,13 +20,13 @@ const AllProjects = ({id}) => {
   }
 
   return (
-    <div className="all-projects" id={id}>
+    <div className="ap-all-projects" id={id}>
       <h2>My Projects</h2>
-      <div className="projects-container">
+      <div className="ap-projects-container">
         {Object.entries(projects).map(([domain, domainProjects]) => (
-          <div key={domain} className="project-domain">
+          <div key={domain} className="ap-project-domain">
             <h3>{domain}</h3>
-            <div className="project-list">
+            <div className="ap-project-list">
               {domainProjects.length > 0 ? (
                 domainProjects.map((project) => (
                   <a
@@ -34,10 +34,10 @@ const AllProjects = ({id}) => {
                     href={project.project_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="project-capsule"
+                    className="ap-project-capsule"
                   >
-                    <span className="project-title">{project.title}</span>
-                    <span className="arrow">→</span>
+                    <span className="ap-project-title">{project.title}</span>
+                    <span className="ap-arrow">→</span>
                   </a>
                 ))
               ) : (

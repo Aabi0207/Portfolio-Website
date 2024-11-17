@@ -1,8 +1,11 @@
 .projects-section {
   padding-bottom: 20px;
-  width: 100%;
+  /* width: 100%; */
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .projects-container {
@@ -11,12 +14,13 @@
   gap: 20px;
   justify-content: space-around;
   width: 70vw;
-  
 }
 
 .heading-1 {
   text-align: center;
   padding-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 800;
 }
 
 .heading-2 {
@@ -79,16 +83,25 @@
 }
 
 .visit-button {
-  color: #fff;
-  background-color: #007BFF;
-  padding: 5px 20px;
-  border-radius: 30px;
+  border: 1px solid #333;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 5px 10px;
   text-decoration: none;
-  margin-bottom: 40px;
+  color: #00b7ff; /* Replace with a color from the theme */
+  font-weight: bold;
+  font-size: small;
+  margin-bottom: 20px;
 }
 
 .visit-button:hover {
-  background-color: #0056b3;
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.heading-tit {
+  text-align: center;
 }
 
 /* Row alignment on smaller screens */

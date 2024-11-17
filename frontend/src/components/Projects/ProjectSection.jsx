@@ -36,7 +36,7 @@ const ProjectsSection = ({id}) => {
                     style={{ backgroundImage: `url(${project.image})` }}
                   >
                     <div className="project-overlay">
-                      <h4>{project.title}</h4>
+                      <h4 className='heading-tit'>{project.title}</h4>
                       <a href={project.project_url} className="visit-button">Visit</a>
                     </div>
                   </div>

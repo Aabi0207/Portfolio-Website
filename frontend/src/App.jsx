@@ -1,5 +1,5 @@
-// src/App.jsx
 import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
 import SkillsTable from "./components/Skills/SkillTable";
@@ -23,19 +23,34 @@ const App = () => {
         <SkillsTable id="skill-table" />
       </div>
 
-      {/* Render either ProjectsSection or AllProjects based on the flag */}
-      {showAllProjects === 0 ? (
-        <ProjectsSection id="project-section" />
-      ) : (
-        <AllProjects id="all-projects" />
-      )}
+      {/* Wrapper for smooth transitions */}
+      <div id="project-container">
+        <CSSTransition
+          in={showAllProjects === 0}
+          timeout={500}
+          classNames="fade"
+          unmountOnExit
+        >
+          <ProjectsSection id="project-section" />
+        </CSSTransition>
+        <CSSTransition
+          in={showAllProjects === 1}
+          timeout={500}
+          classNames="fade"
+          unmountOnExit
+        >
+          <AllProjects id="all-projects" />
+        </CSSTransition>
+      </div>
 
       {/* Button for toggling the flag */}
-      <div className="button-container">
-        <button className="toggle-button" onClick={toggleProjects}>
-          {showAllProjects === 0 ? "Show More" : "Show Less"}
-        </button>
-      </div>
+      <a href="#project-container" className="butt">
+        <div className="button-container">
+          <button className="toggle-button" onClick={toggleProjects}>
+            {showAllProjects === 0 ? "Show More" : "Show Less"}
+          </button>
+        </div>
+      </a>
     </div>
   );
 };

@@ -1,63 +1,90 @@
-.all-projects {
-  padding: 20px;
-  font-family: Arial, sans-serif;
+.ap-all-projects {
   text-align: center;
 }
 
-.all-projects h2 {
-  font-size: 2rem;
-  margin-bottom: 30px; /* Add spacing below heading */
-}
-
-.projects-container {
-  width: 70vw; /* Constrain width */
-  margin: 0 auto; /* Center the container */
-}
-
-.project-domain {
-  margin-bottom: 30px; /* Space between domains */
-}
-
-.project-domain h3 {
-  font-size: 1.5rem;
+.ap-all-projects h2 {
+  font-size: 1.8rem;
   margin-bottom: 15px;
-  text-align: left;
+  font-weight: 800;
 }
 
-.project-list {
-  display: flex;
-  flex-direction: column; /* Arrange capsules vertically */
-  gap: 15px; /* Add space between capsules */
+.ap-projects-container {
+  width: 70vw; /* Use 70% of the viewport width */
+  max-width: 1200px; /* Limit container width on larger screens */
+  margin: 0 auto; /* Center container */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Equal width for columns */
+  gap: 20px; /* Spacing between columns */
 }
 
-.project-capsule {
+.ap-project-domain {
+  padding: 15px;
+  border-radius: 20px; /* Increased border radius */
+}
+
+.ap-project-domain h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+  word-wrap: break-word; /* Prevent text overflow */
+}
+
+.ap-project-list {
   display: flex;
-  justify-content: space-between; /* Align title and arrow */
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ap-project-capsule {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  background-color: #f8f9fa; /* Light background */
+  background-color: #f8f9fa;
   color: #333;
   padding: 15px 20px;
-  border-radius: 10px;
+  border-radius: 20px; /* Increased border radius */
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  width: 100%; /* Ensure capsules fill the container */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow: hidden;
+  font-weight: 500;
 }
 
-.project-capsule:hover {
-  background-color: #007bff; /* Highlight on hover */
-  color: white; /* Change text color on hover */
+.ap-project-capsule:hover {
+  background-color: #007bff;
+  color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.project-title {
+.ap-project-title {
+  flex: 0 0 70%; /* Use 70% of space for text */
   text-align: left;
-  flex: 1; /* Take up remaining space */
+  word-wrap: break-word; /* Wrap text to prevent overflow */
+  margin-right: 10px; /* Add spacing between text and arrow */
 }
 
-.arrow {
-  font-size: 1.5rem;
-  margin-left: 10px;
-  color: inherit; /* Match text color */
+.ap-arrow {
+  flex: 0 0 30%; /* Use 30% of space for arrow */
+  font-size: 1rem; /* Smaller arrow size */
+  color: inherit;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .ap-projects-container {
+    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
+  }
+
+  .ap-project-domain {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ap-projects-container {
+    grid-template-columns: 1fr; /* Single column layout for very small screens */
+  }
 }
