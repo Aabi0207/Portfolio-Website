@@ -1,0 +1,25 @@
+/* Footer.module.css */
+.footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #202020;
+    color: #fff;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #ff5722; /* Vibrant hover color */
+  }
+  
+  .copyright {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  

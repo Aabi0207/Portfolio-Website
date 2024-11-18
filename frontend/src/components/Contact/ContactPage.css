@@ -1,0 +1,95 @@
+/* Contact Page Styling */
+.contact-page {
+  background-color: #4a0d0d; /* Dark red background */
+  padding: 40px 20px;
+  color: white;
+  text-align: start;
+  margin-top: 50px;
+}
+
+.contact-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Form Styling */
+.contact-form {
+  width: 40vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Button Styling */
+.send-button {
+  background-color: white;
+  color: #4a0d0d;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px; /* Capsule style */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 20%;
+  align-self: center;
+}
+
+.send-button:hover {
+  background-color: #700000;
+  color: white;
+}
+
+/* Mobile Responsive Layout */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    width: 70vw;
+  }
+
+  .send-button {
+    width: 30%;
+  }
+}

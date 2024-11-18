@@ -5,6 +5,8 @@ import About from "./components/About/About";
 import SkillsTable from "./components/Skills/SkillTable";
 import ProjectsSection from "./components/Projects/ProjectSection";
 import AllProjects from "./components/AllProjects/AllProjects";
+import ContactPage from "./components/Contact/ContactPage";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 const App = () => {
@@ -51,6 +53,8 @@ const App = () => {
           </button>
         </div>
       </a>
+      <ContactPage />
+      <Footer />
     </div>
   );
 };
