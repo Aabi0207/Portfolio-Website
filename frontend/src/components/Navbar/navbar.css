@@ -4,8 +4,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: whitesmoke; /* Replace with theme's background color */
-  font-family: 'Arial, sans-serif';
+  background-color: #A8DADC; /* Replace with theme's background color */
+  /* font-family: 'Arial, sans-serif'; */
   position: relative; /* Ensure dropdown positioning works */
 }
 
@@ -24,7 +24,7 @@
   display: none; /* Hide dropdown button by default */
   background: none;
   border: none;
-  color: #333; /* Replace with a color from the theme */
+  color: #1D3557; /* Replace with a color from the theme */
   font-weight: bold;
   font-size: small;
   cursor: pointer; /* Pointer cursor for button */
@@ -35,7 +35,7 @@
   position: absolute; /* Position dropdown below the button */
   left: 0;
   top: 100%; /* Align with the bottom of the button */
-  background-color: white; /* Background color of dropdown */
+  background-color: #3d6d8b ; /* Background color of dropdown */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Dropdown shadow */
   z-index: 1000; /* Ensure it appears above other elements */
   width: 100%; /* Full width dropdown */
@@ -44,18 +44,18 @@
 .navbar-link {
   display: block; /* Make links block elements */
   text-decoration: none;
-  color: #333; /* Replace with a color from the theme */
+  color: #1D3557 ; /* Replace with a color from the theme */
   font-weight: bold;
   font-size: small;
   padding: 10px; /* Padding for dropdown links */
 }
 
 .navbar-link:hover {
-  color: #505050; /* A slightly darker shade for hover effect */
+  color: #006aff ; /* A slightly darker shade for hover effect */
 }
 
 .connect-border {
-  border: 1px solid #333;
+  border: 1px solid #1D3557 ;
   border-radius: 50px;
   display: inline-block;
   padding: 5px 10px;
@@ -63,14 +63,14 @@
 
 .navbar-connect {
   text-decoration: none;
-  color: #333; /* Replace with a color from the theme */
+  color: #1D3557  ; /* Replace with a color from the theme */
   font-weight: bold;
   font-size: small;
 }
 
 .connect-border:hover {
-  background-color: #333;
-  color: white;
+  background-color: #1D3557 ;
+  color: #Fff;
   transition: background-color 0.3s ease;
 }
 

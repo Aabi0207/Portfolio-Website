@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./navbar.css";
 
-const Navbar = () => {
+const Navbar = ({id}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -24,17 +24,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" id={id}>
       <div className="navbar-left" ref={dropdownRef}>
         <div className="dropdown-button" onClick={toggleDropdown}>
           Menu
         </div>
         {dropdownOpen && (
           <div className="dropdown-menu">
-            <a href="#home" className="navbar-link" onClick={toggleDropdown}>
+            <a href="#nav" className="navbar-link" onClick={toggleDropdown}>
               Home
             </a>
-            <a href="#skills" className="navbar-link" onClick={toggleDropdown}>
+            <a href="#container" className="navbar-link" onClick={toggleDropdown}>
               Skills
             </a>
             <a href="#projects" className="navbar-link" onClick={toggleDropdown}>

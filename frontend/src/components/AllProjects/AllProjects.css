@@ -6,6 +6,7 @@
   font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 800;
+  color: #1D3557;
 }
 
 .ap-projects-container {
@@ -41,7 +42,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #f8f9fa;
-  color: #333;
+  color: #1D3557;
   padding: 15px 20px;
   border-radius: 20px; /* Increased border radius */
   text-decoration: none;
@@ -54,7 +55,7 @@
 }
 
 .ap-project-capsule:hover {
-  background-color: #007bff;
+  background-color: #1D3557;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

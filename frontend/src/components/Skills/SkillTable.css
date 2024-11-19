@@ -17,6 +17,7 @@
   padding: 20px;
   border: 1px solid #b3b2b2; /* Thin border around each column */
   border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .icon {
@@ -28,6 +29,7 @@
 .skills-title {
   font-size: 1.2em;
   font-weight: bold;
+  color: #1D3557;
   margin-bottom: 10px;
 }
 
