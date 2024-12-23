@@ -1,57 +1,12 @@
 /* src/components/Navbar.css */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   padding: 10px 20px;
   background-color: #A8DADC; /* Replace with theme's background color */
   /* font-family: 'Arial, sans-serif'; */
   position: relative; /* Ensure dropdown positioning works */
-}
-
-.navbar-left {
-  display: flex;
-  align-items: center; /* Align items center vertically */
-}
-
-.desktop-links {
-  display: flex; /* Show desktop links by default */
-  gap: 15px; /* Space between links */
-  margin-left: 50px; /* Margin for desktop view */
-}
-
-.dropdown-button {
-  display: none; /* Hide dropdown button by default */
-  background: none;
-  border: none;
-  color: #1D3557; /* Replace with a color from the theme */
-  font-weight: bold;
-  font-size: small;
-  cursor: pointer; /* Pointer cursor for button */
-}
-
-/* Dropdown menu styling */
-.dropdown-menu {
-  position: absolute; /* Position dropdown below the button */
-  left: 0;
-  top: 100%; /* Align with the bottom of the button */
-  background-color: #3d6d8b ; /* Background color of dropdown */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Dropdown shadow */
-  z-index: 1000; /* Ensure it appears above other elements */
-  width: 100%; /* Full width dropdown */
-}
-
-.navbar-link {
-  display: block; /* Make links block elements */
-  text-decoration: none;
-  color: #1D3557 ; /* Replace with a color from the theme */
-  font-weight: bold;
-  font-size: small;
-  padding: 10px; /* Padding for dropdown links */
-}
-
-.navbar-link:hover {
-  color: #006aff ; /* A slightly darker shade for hover effect */
 }
 
 .connect-border {
@@ -74,35 +29,4 @@
   transition: background-color 0.3s ease;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .navbar {
-      /* flex-direction: column; */
-      align-items: center; /* Align items to the left */
-      padding: 10px; /* Adjust padding */
-      justify-content: flex-start;
-  }
 
-  .navbar-left {
-      /* width: 100%; */
-      position: relative; /* Positioning for dropdown */
-  }
-
-  .dropdown-button {
-      display: inline; /* Show dropdown button on mobile */
-      margin-left: 50px; /* Space from the left */
-      font-weight: bold; /* Ensure button text is bold */
-  }
-
-  .navbar-right {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 50px; /* Space from the right */
-      /* margin-top: 10px; Margin above the connect button */
-  }
-
-  .desktop-links {
-      display: none; /* Hide desktop links on mobile */
-  }
-}

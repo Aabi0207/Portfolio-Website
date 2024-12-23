@@ -10,13 +10,13 @@ const About = ({id}) => {
       I am an AI Engineer and a Full Stack Developer
       </div>
       <div className="about-image-container">
-        <img src="path/to/your-logo-or-profile.jpg" alt="Profile" className="about-image" />
+        <img src="projects_images/finalCut3.jpg" alt="Profile" className="about-image" />
       </div>
       <div className="about-title">About Me</div>
       <p className="about-description">
-      Hi, I'm Abhishek Biradar, a Bachelor of Engineering student in Information Technology with a passion for building impactful tech solutions.
+      I’m a developer who enjoys working on projects in AI, Fullstack Development, and Data Science. I specialize in Machine Learning, Deep Learning, and Natural Language Processing, using these skills to solve real-world problems and create functional, innovative solutions. Writing clean, efficient code and delivering easy-to-use designs is what I focus on most.
       </p>
-      <p className="about-description">My journey in coding began three years ago with foundational skills in HTML, CSS, and JavaScript. Driven by a keen interest in data science and machine learning, I soon chose Python as my primary language. Along the way, I’ve gained hands-on experience with powerful backend frameworks like Flask and Django, enabling me to develop dynamic, data-driven applications.</p>
+      <p className="about-description">I’m always looking for ways to improve, learn new skills, and take on challenges that make a difference in the tech world.</p>
     </section>
   );
 };

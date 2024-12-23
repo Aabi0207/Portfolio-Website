@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer-section">
       <div className="footer-section__icon-container">
         <a
-          href="https://github.com/your-profile"
+          href="https://github.com/Aabi0207"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-section__icon"
@@ -15,7 +15,7 @@ const Footer = () => {
           <FaGithub />
         </a>
         <a
-          href="https://www.linkedin.com/in/your-profile/"
+          href="https://www.linkedin.com/in/abhishek-biradar-915404281"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-section__icon"
@@ -23,7 +23,7 @@ const Footer = () => {
           <FaLinkedin />
         </a>
         <a
-          href="mailto:your-email@example.com"
+          href="mailto:abhishekbiradar0207@gmail.com"
           className="footer-section__icon"
         >
           <FaEnvelope />
