@@ -20,7 +20,7 @@
   text-decoration: none;
   color: #1D3557  ; /* Replace with a color from the theme */
   font-weight: bold;
-  font-size: small;
+  font-size: 1.0rem;
 }
 
 .connect-border:hover {

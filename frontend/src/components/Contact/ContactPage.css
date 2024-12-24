@@ -8,7 +8,7 @@
 }
 
 .contact-heading {
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 30px;
   color: #F1FAEE;
   text-align: center;
@@ -16,7 +16,7 @@
 
 /* Form Styling */
 .contact-form {
-  width: 40vw;
+  width: 45vw;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@
 }
 
 .form-group label {
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   margin-bottom: 8px;
 }
 
@@ -45,7 +45,7 @@
   border: none;
   border-radius: 5px;
   padding: 10px;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #333;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

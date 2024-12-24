@@ -8,7 +8,7 @@ const AllProjects = ({ id }) => {
   useEffect(() => {
     // Fetch projects data using Axios
     axios
-      .get("http://127.0.0.1:8000/api/all-projects/")
+      .get("https://iamvengeance.pythonanywhere.com/api/all-projects/")
       .then((response) => {
         setProjects(response.data);
       })
@@ -16,7 +16,11 @@ const AllProjects = ({ id }) => {
   }, []);
 
   if (!projects) {
-    return <p>Loading projects...</p>;
+    return (
+      <div className="ap-all-projects" id={id}>
+        <p>Loading projects...</p>
+      </div>
+    );
   }
 
   return (

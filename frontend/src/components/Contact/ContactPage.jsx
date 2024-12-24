@@ -21,7 +21,7 @@ const ContactPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/send-email/", formData);
+      const response = await axios.post("https://iamvengeance.pythonanywhere.com/api/send-email/", formData);
       if (response.data.success) {
         alert("Email sent successfully!");
       } else {

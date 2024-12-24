@@ -7,22 +7,23 @@
     font-family: 'Poppins', serif;
   }
 
+
 #container {
     position: relative;
 }
 
 #skill-table {
     position: absolute;
-    bottom: -400px;
+    bottom: -520px;
     right: 0px;
 }
 
 #project-section {
-  margin-top: 470px;
+  margin-top: 590px;
 }
 
 #all-projects {
-  margin-top: 470px;
+  margin-top: 590px;
 }
 
 /* Center the button below the project section */
@@ -38,7 +39,7 @@
   border: 1px solid #1D3557;;
   border-radius: 50px; /* Capsule design */
   padding: 5px 10px;
-  font-size: small;
+  font-size: 1.0rem;
   cursor: pointer;
   font-weight: bold;
 }
@@ -78,14 +79,14 @@
 
 @media (max-width: 768px) {
     #skill-table {
-      bottom: -1400px;
+      bottom: -1700px;
     }
 
     #project-section{
-      margin-top: 90em;
+      margin-top: 1740px;
     }
 
     #all-projects {
-      margin-top: 90em;
+      margin-top: 1740px;
     }
   }

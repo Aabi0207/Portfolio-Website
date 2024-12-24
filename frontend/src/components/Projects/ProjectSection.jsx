@@ -11,7 +11,7 @@ const ProjectsSection = ({ id }) => {
 
   useEffect(() => {
     axios
-      .get('/api/top-projects/')
+      .get('https://iamvengeance.pythonanywhere.com/api/top-projects/')
       .then((response) => {
         // Map API keys to desired keys
         const mappedProjects = {

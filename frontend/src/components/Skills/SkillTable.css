@@ -11,7 +11,7 @@
 
 .skills-column {
   flex: 1;
-  max-width: 300px;
+  max-width: 20vw;
   text-align: center;
   background-color: #fff;
   padding: 20px;
@@ -21,25 +21,25 @@
 }
 
 .icon {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 10px;
 }
 
 .skills-title {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
   color: #1D3557;
   margin-bottom: 10px;
 }
 
 .skills-description {
-  font-size: 0.8em;
+  font-size: 1.0em;
   margin-bottom: 15px;
 }
 
 .dev-tools-title {
-  font-size: 1.0em;
+  font-size: 1.2em;
   color: #e63946; /* Dev tools label color */
   font-weight: bold;
   margin-bottom: 5px;
@@ -52,7 +52,7 @@
 }
 
 .dev-tools-list li {
-  font-size: 0.8em;
+  font-size: 1.0em;
   margin-bottom: 5px; /* Increased spacing between items */
 }
 
@@ -65,6 +65,6 @@
 
   .skills-column {
     margin-bottom: 20px;
-    width: 90%;
+    max-width: 300px;
   }
 }
