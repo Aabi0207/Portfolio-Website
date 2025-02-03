@@ -27,6 +27,7 @@ const App = () => {
 
       {/* Wrapper for smooth transitions */}
       <div id="project-container">
+        <img src="/projects_images/blueBackg.png" alt="" />
         <CSSTransition
           in={showAllProjects === 0}
           timeout={500}

@@ -7,6 +7,18 @@
     font-family: 'Poppins', serif;
   }
 
+  #project-container{
+    position: relative;
+  }
+  
+
+#project-container img{
+  position: absolute;
+  width: 98vw;
+  z-index: -1;
+  opacity: 0.9;
+}
+
 
 #container {
     position: relative;
@@ -88,5 +100,9 @@
 
     #all-projects {
       margin-top: 1740px;
+    }
+
+    #project-container img{
+      display: none;
     }
   }
