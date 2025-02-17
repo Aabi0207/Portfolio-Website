@@ -1,11 +1,24 @@
 // src/components/About.jsx
 import React from 'react';
 import './About.css';
+import BlurText from "./BlurText";
+
+const handleAnimationComplete = () => {
+  console.log('Animation completed!');
+};
+
 
 const About = ({id}) => {
   return (
     <section className="about-section" id={id}>
-      <div className="about-greeting">Hii 👋, My name is Abhishek Biradar</div>
+      <BlurText
+        text="Hii 👋, My name is Abhishek Biradar"
+        delay={150}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={handleAnimationComplete}
+        className="about-greeting"
+      />
       <div className="about-stack">
       I am an AI Engineer and a Full Stack Developer
       </div>

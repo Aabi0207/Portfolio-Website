@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
@@ -7,12 +7,17 @@ import ProjectsSection from "./components/Projects/ProjectSection";
 import AllProjects from "./components/AllProjects/AllProjects";
 import ContactPage from "./components/Contact/ContactPage";
 import Footer from "./components/Footer/Footer";
+import useIntersectionObserver from "./UseIntersectionObserver";
 import "./App.css";
 
 const App = () => {
   const [showAllProjects, setShowAllProjects] = useState(0);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
 
-  // Toggle the flag
+  const isSkillsVisible = useIntersectionObserver(skillsRef, { threshold: 0.5 });
+  const isProjectsVisible = useIntersectionObserver(projectsRef, { threshold: 0.1 });
+
   const toggleProjects = () => {
     setShowAllProjects((prev) => (prev === 0 ? 1 : 0));
   };
@@ -22,11 +27,12 @@ const App = () => {
       <Navbar id="nav" />
       <div id="container">
         <About id="about" />
-        <SkillsTable id="skill-table" />
+        <div ref={skillsRef} className={`section ${isSkillsVisible ? "visible" : ""}`}>
+          <SkillsTable id="skill-table" />
+        </div>
       </div>
 
-      {/* Wrapper for smooth transitions */}
-      <div id="project-container">
+      <div id="project-container" ref={projectsRef} className={`section ${isProjectsVisible ? "visible" : ""}`}>
         <img src="/projects_images/blueBackg.png" alt="" />
         <CSSTransition
           in={showAllProjects === 0}
@@ -46,7 +52,6 @@ const App = () => {
         </CSSTransition>
       </div>
 
-      {/* Button for toggling the flag */}
       <a href="#project-container" className="butt">
         <div className="button-container">
           <button className="toggle-button" onClick={toggleProjects}>
@@ -54,8 +59,12 @@ const App = () => {
           </button>
         </div>
       </a>
-      <ContactPage />
-      <Footer />
+
+      {/* Contact and Footer without the effect */}
+      <div>
+        <ContactPage />
+        <Footer />
+      </div>
     </div>
   );
 };
