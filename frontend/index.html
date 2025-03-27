@@ -5,9 +5,118 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aabi's Portfolio</title>
+    <style>
+      /* Updated Loader CSS */
+      .initial-loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #fff; /* White background */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      .initial-loader {
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .outer-ring {
+        position: absolute;
+        border: 4px solid transparent;
+        border-radius: 50%;
+        animation: rotate 1.2s linear infinite;
+      }
+      .pink-ring {
+        width: 80px;
+        height: 80px;
+        border-top: 4px solid #ff007f;
+        border-left: 4px solid #ff007f;
+        animation-delay: 0s;
+      }
+      .blue-ring { /* Changed from white to blue */
+        width: 60px;
+        height: 60px;
+        border-top: 3px solid #007bff; /* Blue color */
+        border-right: 3px solid #007bff;
+        top: 10px;
+        left: 10px;
+        animation-delay: -0.5s;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .wave-circle {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #00cfff;
+        background-color: #fff;
+        z-index: 2;
+      }
+      .wave {
+        position: absolute;
+        bottom: 0;
+        width: 200%;
+        height: 200%;
+        background: #00cfff;
+        border-radius: 40%;
+        animation: waveAnimation 2s linear infinite;
+        transform: translateX(-50%);
+      }
+      @keyframes waveAnimation {
+        0% {
+          transform: translateX(-50%) translateY(10%);
+        }
+        50% {
+          transform: translateX(-60%) translateY(0%);
+        }
+        100% {
+          transform: translateX(-50%) translateY(10%);
+        }
+      }
+    </style>
   </head>
   <body>
+    <!-- Initial Loader -->
+    <div id="initial-loader" class="initial-loading-screen">
+      <div class="initial-loader">
+        <div class="outer-ring pink-ring"></div>
+        <div class="outer-ring blue-ring"></div> <!-- Changed from white to blue -->
+        <div class="wave-circle">
+          <div class="wave"></div>
+        </div>
+      </div>
+    </div>
+
     <div id="root"></div>
+
+    <script type="module">
+      // Hide loader once React has mounted
+      window.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("initial-loader");
+        if (loader) {
+          loader.classList.add("fade-out");
+          setTimeout(() => {
+            loader.remove();
+          }, 500);
+        }
+      });
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
