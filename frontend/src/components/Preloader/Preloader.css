@@ -1,0 +1,102 @@
+/* Fullscreen preloader */
+.preloader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff; /* White background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+  
+  /* Loader container */
+  .preloader {
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* Outer rotating rings */
+  .outer-ring {
+    position: absolute;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    animation: rotate 1.2s linear infinite;
+  }
+  
+  .pink-ring {
+    width: 80px;
+    height: 80px;
+    border-top: 4px solid #ff007f;
+    border-left: 4px solid #ff007f;
+    animation-delay: 0s;
+  }
+  
+  .blue-ring {
+    width: 60px;
+    height: 60px;
+    border-top: 3px solid #007bff; /* Changed from white to blue */
+    border-right: 3px solid #007bff;
+    top: 10px;
+    left: 10px;
+    animation-delay: -0.5s;
+  }
+  
+  /* Wave Animation */
+  .wave-circle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #00cfff;
+    background-color: #fff;
+    z-index: 2;
+  }
+  
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 200%;
+    background: #00cfff;
+    border-radius: 40%;
+    animation: waveAnimation 2s linear infinite;
+    transform: translateX(-50%);
+  }
+  
+  /* Rotating Animation */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Wave Animation */
+  @keyframes waveAnimation {
+    0% {
+      transform: translateX(-50%) translateY(10%);
+    }
+    50% {
+      transform: translateX(-60%) translateY(0%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(10%);
+    }
+  }
+  
+  /* Fade out effect when removed */
+  .fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+  

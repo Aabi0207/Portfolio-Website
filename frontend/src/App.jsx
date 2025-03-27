@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
@@ -8,31 +8,51 @@ import AllProjects from "./components/AllProjects/AllProjects";
 import ContactPage from "./components/Contact/ContactPage";
 import Footer from "./components/Footer/Footer";
 import useIntersectionObserver from "./UseIntersectionObserver";
+import Preloader from "./components/Preloader/Preloader";
 import "./App.css";
 
 const App = () => {
   const [showAllProjects, setShowAllProjects] = useState(0);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const isSkillsVisible = useIntersectionObserver(skillsRef, { threshold: 0.5 });
-  const isProjectsVisible = useIntersectionObserver(projectsRef, { threshold: 0.1 });
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000); // Preloader delay
+    return () => clearTimeout(timer);
+  }, []);
+
+  const isSkillsVisible = useIntersectionObserver(skillsRef, {
+    threshold: 0.5,
+  });
+  const isProjectsVisible = useIntersectionObserver(projectsRef, {
+    threshold: 0.1,
+  });
 
   const toggleProjects = () => {
     setShowAllProjects((prev) => (prev === 0 ? 1 : 0));
   };
+
+  if (isLoading) return <Preloader />;
 
   return (
     <div>
       <Navbar id="nav" />
       <div id="container">
         <About id="about" />
-        <div ref={skillsRef} className={`section ${isSkillsVisible ? "visible" : ""}`}>
+        <div
+          ref={skillsRef}
+          className={`section ${isSkillsVisible ? "visible" : ""}`}
+        >
           <SkillsTable id="skill-table" />
         </div>
       </div>
 
-      <div id="project-container" ref={projectsRef} className={`section ${isProjectsVisible ? "visible" : ""}`}>
+      <div
+        id="project-container"
+        ref={projectsRef}
+        className={`section ${isProjectsVisible ? "visible" : ""}`}
+      >
         <img src="/projects_images/blueBackg.png" alt="" />
         <CSSTransition
           in={showAllProjects === 0}
@@ -60,11 +80,9 @@ const App = () => {
         </div>
       </a>
 
-      {/* Contact and Footer without the effect */}
-      <div>
-        <ContactPage />
-        <Footer />
-      </div>
+      {/* Contact and Footer */}
+      <ContactPage />
+      <Footer />
     </div>
   );
 };
