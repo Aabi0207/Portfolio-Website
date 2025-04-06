@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import axios from "axios";
 import { CSSTransition } from "react-transition-group";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
@@ -8,32 +9,54 @@ import AllProjects from "./components/AllProjects/AllProjects";
 import ContactPage from "./components/Contact/ContactPage";
 import Footer from "./components/Footer/Footer";
 import useIntersectionObserver from "./UseIntersectionObserver";
-import Preloader from "./components/Preloader/Preloader";
 import "./App.css";
 
 const App = () => {
   const [showAllProjects, setShowAllProjects] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [topProjects, setTopProjects] = useState({
+    AI: [],
+    Fullstack: [],
+    DataScience: [],
+  });
+
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); // Preloader delay
-    return () => clearTimeout(timer);
+    axios.get("https://iamvengeance.pythonanywhere.com/api/top-projects/")
+      .then((response) => {
+        const mappedProjects = {
+          AI: response.data["AI(ML, DL, NLP)"] || [],
+          Fullstack: response.data["Fullstack"] || [],
+          DataScience: response.data["Data Analysis"] || [],
+        };
+        setTopProjects(mappedProjects);
+        setIsLoading(false);
+  
+        // Clear native loader
+        const loader = document.getElementById("initial-loader");
+        if (loader) {
+          setTimeout(() => {
+            loader.classList.add("fade-out");
+            // loader.remove();
+          }, 300);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
   }, []);
+  
 
-  const isSkillsVisible = useIntersectionObserver(skillsRef, {
-    threshold: 0.5,
-  });
-  const isProjectsVisible = useIntersectionObserver(projectsRef, {
-    threshold: 0.1,
-  });
+
+  const isSkillsVisible = useIntersectionObserver(skillsRef, { threshold: 0.5 });
+  const isProjectsVisible = useIntersectionObserver(projectsRef, { threshold: 0.1 });
 
   const toggleProjects = () => {
     setShowAllProjects((prev) => (prev === 0 ? 1 : 0));
   };
-
-  if (isLoading) return <Preloader />;
 
   return (
     <div>
@@ -54,14 +77,16 @@ const App = () => {
         className={`section ${isProjectsVisible ? "visible" : ""}`}
       >
         <img src="/projects_images/blueBackg.png" alt="" />
+
         <CSSTransition
           in={showAllProjects === 0}
           timeout={500}
           classNames="fade"
           unmountOnExit
         >
-          <ProjectsSection id="project-section" />
+          <ProjectsSection id="project-section" topProjects={topProjects} />
         </CSSTransition>
+
         <CSSTransition
           in={showAllProjects === 1}
           timeout={500}
@@ -80,7 +105,6 @@ const App = () => {
         </div>
       </a>
 
-      {/* Contact and Footer */}
       <ContactPage />
       <Footer />
     </div>

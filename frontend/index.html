@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -38,7 +38,8 @@
         border-left: 4px solid #ff007f;
         animation-delay: 0s;
       }
-      .blue-ring { /* Changed from white to blue */
+      .blue-ring {
+        /* Changed from white to blue */
         width: 60px;
         height: 60px;
         border-top: 3px solid #007bff; /* Blue color */
@@ -47,6 +48,27 @@
         left: 10px;
         animation-delay: -0.5s;
       }
+      /* This should be applied to the outer div: #initial-loader */
+      #initial-loader {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      #initial-loader.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+
       @keyframes rotate {
         0% {
           transform: rotate(0deg);
@@ -95,7 +117,8 @@
     <div id="initial-loader" class="initial-loading-screen">
       <div class="initial-loader">
         <div class="outer-ring pink-ring"></div>
-        <div class="outer-ring blue-ring"></div> <!-- Changed from white to blue -->
+        <div class="outer-ring blue-ring"></div>
+        <!-- Changed from white to blue -->
         <div class="wave-circle">
           <div class="wave"></div>
         </div>
@@ -104,7 +127,7 @@
 
     <div id="root"></div>
 
-    <script type="module">
+    <!-- <script type="module">
       // Hide loader once React has mounted
       window.addEventListener("DOMContentLoaded", () => {
         const loader = document.getElementById("initial-loader");
@@ -115,7 +138,7 @@
           }, 500);
         }
       });
-    </script>
+    </script> -->
 
     <script type="module" src="/src/main.jsx"></script>
   </body>

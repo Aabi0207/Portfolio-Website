@@ -2,30 +2,30 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ProjectSection.css';
 
-const ProjectsSection = ({ id, setIsLoading }) => {
-  const [topProjects, setTopProjects] = useState({
-    AI: [],
-    Fullstack: [],
-    DataScience: [],
-  });
+const ProjectsSection = ({ id, topProjects }) => {
+  // const [topProjects, setTopProjects] = useState({
+  //   AI: [],
+  //   Fullstack: [],
+  //   DataScience: [],
+  // });
 
-  useEffect(() => {
-    axios
-      .get("https://iamvengeance.pythonanywhere.com/api/top-projects/")
-      .then((response) => {
-        const mappedProjects = {
-          AI: response.data["AI(ML, DL, NLP)"] || [],
-          Fullstack: response.data["Fullstack"] || [],
-          DataScience: response.data["Data Analysis"] || [],
-        };
-        setTopProjects(mappedProjects);
-        setIsLoading(false); // Stop preloader when data is ready
-      })
-      .catch((error) => {
-        console.error(error);
-        setIsLoading(false); // Stop preloader even on error
-      });
-  }, [setIsLoading]);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://iamvengeance.pythonanywhere.com/api/top-projects/")
+  //     .then((response) => {
+  //       const mappedProjects = {
+  //         AI: response.data["AI(ML, DL, NLP)"] || [],
+  //         Fullstack: response.data["Fullstack"] || [],
+  //         DataScience: response.data["Data Analysis"] || [],
+  //       };
+  //       setTopProjects(mappedProjects);
+  //       setIsLoading(false); // Stop preloader when data is ready
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //       setIsLoading(false); // Stop preloader even on error
+  //     });
+  // }, [setIsLoading]);
 
   return (
     <div className="projects-section" id={id}>
