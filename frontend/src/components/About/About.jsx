@@ -25,7 +25,7 @@ const About = ({id}) => {
       {/* <div className="image-background-container"> */}
       <div className="about-image-container">
         <img src="projects_images/finalCut3.jpg" alt="Profile" className="about-image" />
-        <img src="/imageBackg.png" alt="" className="backg-profile" />
+        {/* <img src="/imageBackg.png" alt="" className="backg-profile" /> */}
       </div>
       {/* </div> */}
 
