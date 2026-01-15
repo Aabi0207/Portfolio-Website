@@ -20,11 +20,11 @@ const About = ({id}) => {
         className="about-greeting"
       />
       <div className="about-stack">
-      I am an AI Engineer and a Full Stack Developer
+      I am a Full Stack Developer and AI Engineer
       </div>
       {/* <div className="image-background-container"> */}
       <div className="about-image-container">
-        <img src="projects_images/finalCut3.jpg" alt="Profile" className="about-image" />
+        <img src="projects_images/profilePhoto.jpeg" alt="Profile" className="about-image" />
         {/* <img src="/imageBackg.png" alt="" className="backg-profile" /> */}
       </div>
       {/* </div> */}
